@@ -84,8 +84,7 @@ function question(answerEl){
    button4.textContent=questions[count].choices[3]
         console.log(questions[count].answer)
 
-button1.addEventListener("click",showAnswer){
-
+button1.addEventListener("click",showAnswer)
 button2.addEventListener("click",showAnswer)
 button3.addEventListener("click",showAnswer)
 button4.addEventListener("click",showAnswer)
@@ -93,13 +92,17 @@ button4.addEventListener("click",showAnswer)
        
 }
     
+function showAnswer(event){
+    event.preventDefault()
+    
+    //user click
+    console.log(event.target.innerText)
 
-function showAnswer(count,questions){
-    
-console.log(questions.answer[count])
-    
-     
-    }
+    //my answer
+    console.log(questions[count].answer)
+}
+
+
 
         
 
