@@ -1,0 +1,21 @@
+
+highscores link
+timer
+header
+start button
+next button
+
+function
+when start game button is clicked,
+clear screen (function)
+timer starts
+while timer is not 0,
+show first question and answer choices
+if correct answer is selected, show "Correct!"
+if incorrect answer is selected, show "Incorrect!"
+
+
+
+
+
+

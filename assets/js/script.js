@@ -1,3 +1,4 @@
+//Declare Variables
 var button=document.querySelector("#start")
 var startScreen = document.querySelector("#startScreen")
 var gameBoard = document.querySelector("#gameBoard")
@@ -6,24 +7,34 @@ var spanEl = document.querySelector("#question")
 var nextButton = document.querySelector("#next")
 var timer
 var secondsLeft = 10
+var button1=document.querySelector("#button0")
+var button2=document.querySelector("#button1")
+var button3=document.querySelector("#button2")
+var button4=document.querySelector("#button3")
+var answerEl=document.querySelector("#answer")
 
+var score
+
+//Set question object
 var questions = [
     {
-        question : "blah blah",
-        answer: [1,2,3,4],
-        actualAnswer: 2
+        question : "Inside which HTML element do we put the Javascript?",
+        choices: ["<javascript>","<js>","<script>","<scripting>"],
+        answer: "<script>"
+        
     },
     {
-        question : "blah blah 2",
-        answer: [1,2,3,4],
-        actualAnswer: 2
+        question : "What does CSS stand for?",
+        choices: ["Colorful Style Sheets","Cascading Style Sheets","Computer Style Sheets","Creative Style Sheets"],
+        answer: "Cascading Style Sheets"
     },
     {
-        question : "blah blah 3",
-        answer: [1,2,3,4],
-        actualAnswer: 2
+        question :"Which HTML tag is used to define an internal style sheet?",
+        choices: ["<style>","<css>","<script>","<head>"],
+        answer: "<style>"
     }
 ]
+
 
 var count = 0 
 
@@ -31,7 +42,7 @@ function endGame() {
     console.log('ended')
 }
 
-
+//Timer function
 function timer(){
     timer=setInterval(
         function(){
@@ -53,15 +64,52 @@ function startGame(){
    //start timer
    timer()
    //ask first question 
-   spanEl.textContent=questions[count].question
+   spanEl.textContent=questions[count].question 
+   button1.textContent=questions[count].choices[0]
+   button2.textContent=questions[count].choices[1]
+   button3.textContent=questions[count].choices[2]
+   button4.textContent=questions[count].choices[3]
+   console.log(answer)
+        
+
 }
 
 
-function question(){
+function question(answerEl){
     count++
     spanEl.textContent=questions[count].question
+   button1.textContent=questions[count].choices[0]
+   button2.textContent=questions[count].choices[1]
+   button3.textContent=questions[count].choices[2]
+   button4.textContent=questions[count].choices[3]
+        console.log(questions[count].answer)
+
+button1.addEventListener("click",showAnswer){
+
+button2.addEventListener("click",showAnswer)
+button3.addEventListener("click",showAnswer)
+button4.addEventListener("click",showAnswer)
+
+       
 }
+    
+
+function showAnswer(count,questions){
+    
+console.log(questions.answer[count])
+    
+     
+    }
+
+        
+
+
+
+
 
 nextButton.addEventListener("click",question)
 
 button.addEventListener("click",startGame)
+
+
+    
