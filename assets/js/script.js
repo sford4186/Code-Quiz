@@ -6,7 +6,7 @@ var timerEl=document.querySelector("#timer")
 var spanEl = document.querySelector("#question")
 var nextButton = document.querySelector("#next")
 var timer
-var secondsLeft = 10
+var secondsLeft = 20
 var button1=document.querySelector("#button0")
 var button2=document.querySelector("#button1")
 var button3=document.querySelector("#button2")
@@ -33,6 +33,11 @@ var questions = [
         question :"Which HTML tag is used to define an internal style sheet?",
         choices: ["<style>","<css>","<script>","<head>"],
         answer: "<style>"
+    },
+    {
+        question :"How is HTML defined?",
+        choices: ["Hypertext Markup Language","Hyperlinks The Markup Language","Hypertext Madeup Links","None of the Above"],
+        answer: "Hypertext Markup Language"
     }
 ]
 
