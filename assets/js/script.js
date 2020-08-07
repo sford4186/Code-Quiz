@@ -14,8 +14,9 @@ var button4=document.querySelector("#button3")
 var answerEl=document.querySelector("#answer")
 
 var score
+var count = 0 
 
-//Set question object
+//Set question object with question, options, and the correct answer
 var questions = [
     {
         question : "Inside which HTML element do we put the Javascript?",
@@ -36,8 +37,7 @@ var questions = [
 ]
 
 
-var count = 0 
-
+//end Game when timer ends
 function endGame() {
     console.log('ended')
 }
@@ -61,10 +61,15 @@ function startGame(){
    //clear existing html
     startScreen.setAttribute('style',"display:none;")
     gameBoard.setAttribute('style', 'display:block')
-   //start timer
+    
+  
+    //start timer
    timer()
+
    //ask first question 
    spanEl.textContent=questions[count].question 
+
+   //show button options
    button1.textContent=questions[count].choices[0]
    button2.textContent=questions[count].choices[1]
    button3.textContent=questions[count].choices[2]
@@ -74,16 +79,18 @@ function startGame(){
 
 }
 
+//Present question and answer choices
 
-function question(answerEl){
+function question(){
     count++
-    spanEl.textContent=questions[count].question
+   spanEl.textContent=questions[count].question
    button1.textContent=questions[count].choices[0]
    button2.textContent=questions[count].choices[1]
    button3.textContent=questions[count].choices[2]
    button4.textContent=questions[count].choices[3]
-        console.log(questions[count].answer)
+   console.log(questions[count].answer)
 
+//capture user button clicks
 button1.addEventListener("click",showAnswer)
 button2.addEventListener("click",showAnswer)
 button3.addEventListener("click",showAnswer)
@@ -95,6 +102,22 @@ button4.addEventListener("click",showAnswer)
 function showAnswer(event){
     event.preventDefault()
     
+    
+
+    if(event.target.innerText != questions[count].answer){
+       
+        answerEl.textContent="Incorrect!"
+        
+        
+        
+    } else {
+        answerEl.textContent="Correct!"
+        
+        
+       
+    }
+   
+
     //user click
     console.log(event.target.innerText)
 
@@ -102,15 +125,11 @@ function showAnswer(event){
     console.log(questions[count].answer)
 }
 
-
-
-        
-
-
-
-
+answerEl.setAttribute('style', 'display:block')
 
 nextButton.addEventListener("click",question)
+
+
 
 button.addEventListener("click",startGame)
 
