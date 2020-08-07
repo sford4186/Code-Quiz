@@ -11,30 +11,35 @@
     <div class="container-fluid">
         <div class="row " >
             <div class="col-sm-3 p-3">
-                <a href="highscore.html">Highscore Page</a>
+                <a href="highscore.html" style="color:white">Highscore Page</a>
             </div>
             <div class="col-sm-6"></div>
-            <div class="col-sm-3" id="timer"></div>
+            <div class="col-sm-3" id="timer" style="color: white;"></div>
         </div>
         <div class="row m-4" id="startScreen">
-            <h1 style="text-align: center">Code Quiz Challenge</h1>
+            <h1 style="color: white">Code Quiz Challenge</h1>
             <div class="col-sm-3"></div>
-            <div class="col-sm-6">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio ipsum ut iure blanditiis, tenetur saepe vitae, aperiam mollitia debitis impedit aliquid maxime natus. Amet fugit sit cumque, ratione a consequuntur!
-            <button id="start">Start Game</button>
+            <div class="col-sm-6">Try to answer the following code-related questions within the time limit.  Keep in mind that incorrect answers will penalie your scoretime by ten seconds!
+            <br>
+                <button id="start" style="background-color: blue">Start Quiz</button>
             </div>
         </div>
         <div class="row" style="display: none;" id="gameBoard">
             <div class="col-sm-3"></div>
             <div class="col-sm-6"><span id="question"></span></div>
+            <br>
+            <br>
             <div id="answer-buttons" class="btn-grid">
                 <button id="button0">Button 1<span id="choice0"></span></button>
                 <button id="button1">Button 2<span id="choice1"></span></button>
                 <button id="button2">Button 3<span id="choice2"></span></button>
                 <button id="button3">Button 4<span id="choice3"></span></button>
             </div>
-            
-            <div><button id="next">next</button></div>
             <br>
+            <br>
+            <div><button id="next"><h4>Next</h4></button></div>
+            <br>
+            <hr>
             
             <h4> <span id="answer" style="display: block"></span></h4>
         </div>
