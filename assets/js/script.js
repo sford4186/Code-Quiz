@@ -118,41 +118,39 @@ function showAnswer(event) {
     event.preventDefault()
 
 
-console.log(scoreEl)
+    console.log(scoreEl)
+
 
     if (event.target.innerText != questions[count].answer) {
 
 
         answerEl.textContent = "Incorrect!"
-         score=score-10
+        score = score - 10
 
 
 
 
     } else {
         answerEl.textContent = "Correct!"
-        score=score+10
-
+        score = score + 10
+        
         
 
 
-        
     }
 
-scoreEl.textContent="Score:" + score
+    scoreEl.textContent = "Score:  " + score
+    localStorage.setItem("scoreEl", score.value);
     //user click
     console.log(event.target.innerText)
     console.log(scoreEl)
 
     //my answer
     console.log(questions[count].answer)
+
 }
 
-
-
 nextButton.addEventListener("click", question)
-
-
 
 button.addEventListener("click", startGame)
 

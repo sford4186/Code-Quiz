@@ -113,3 +113,11 @@ h1 {
     border: 1px solid;
     margin: 10px 40px 10px;
     }
+
+    #score {
+        text-align:right;
+    }
+
+    #timer {
+        text-align: right;
+    }
