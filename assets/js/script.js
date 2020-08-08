@@ -6,7 +6,7 @@ var timerEl = document.querySelector("#timer")
 var spanEl = document.querySelector("#question")
 var nextButton = document.querySelector("#next")
 var timer
-var secondsLeft = 10
+var secondsLeft = 15
 var button1 = document.querySelector("#button0")
 var button2 = document.querySelector("#button1")
 var button3 = document.querySelector("#button2")
@@ -74,6 +74,9 @@ function startGame() {
     //start timer
     timer()
 
+    
+    
+    
     //ask first question 
     spanEl.textContent = questions[count].question
 
@@ -90,13 +93,17 @@ function startGame() {
     button3.addEventListener("click", showAnswer)
     button4.addEventListener("click", showAnswer)
 
-
+        
 }
 
 //Present question and answer choices
 
 function question() {
+
+    
     count++
+
+    if (count < 4){
 
     spanEl.textContent = questions[count].question
     button1.textContent = questions[count].choices[0]
@@ -110,9 +117,14 @@ function question() {
     button2.addEventListener("click", showAnswer)
     button3.addEventListener("click", showAnswer)
     button4.addEventListener("click", showAnswer)
-
-
+    }
+    else {
+        endGame()
+    }
+    
 }
+
+
 
 function showAnswer(event) {
     event.preventDefault()
@@ -153,4 +165,5 @@ function showAnswer(event) {
 nextButton.addEventListener("click", question)
 
 button.addEventListener("click", startGame)
+
 
