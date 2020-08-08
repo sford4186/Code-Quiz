@@ -25,7 +25,9 @@
     margin: 10px 40px 10px;
 }
 
-
+#container {
+    text-align: center; 
+}
 
 body {
     
@@ -36,7 +38,7 @@ body {
     text-align: center;
     width: 100 vw;
     height: 100 vh;
-    background-color: purple;
+    background-color:purple;
 }
 
 #button0:hover, #button1:hover, #button2:hover, #button3:hover{
@@ -58,11 +60,15 @@ hr {
 
 #next {
 
-    border-radius: 5px;
+    border-radius: 30px;
     background-color: blue;
     padding: 5px 10px;
     color: white;
+    width: 250px;
+    font-size: 20px;
+    color: white;
     border: 1px solid;
+    margin: 10px 40px 10px;
 }
 
 #question {
@@ -75,14 +81,35 @@ hr {
 
 #startScreen {
     text-align: center;
-    justify-content: center;
+    justify-content: center; 
 }
 
-#startScreen h1 {
+
+
+h1 {
     text-align: center;
     justify-content: center;
+    
+    
     }
     p {
-        text-align: center;
+        
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+         display: flex;  
+        flex-wrap: wrap;
+         color: white;
+        
+    }
+
+    #start {
+        
+    border-radius: 30px;
+    background-color: red;
+    padding: 5px 10px;
+    color: white;
+    width: 250px;
+    font-size: 20px;
+    color: white;
+    border: 1px solid;
+    margin: 10px 40px 10px;
     }

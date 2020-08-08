@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./assets/css/highscore.css">
     <title>HighScore</title>
 </head>
 
@@ -13,6 +14,8 @@
         <h1>All Done!</h1>
         <div class="col-sm-3" id="timer"></div>
         <form>
+            
+
             <h2>Enter Your Initials:</h2> <input placeholder="Enter your initials" id="name" />
 
             <button id="submit">Submit</button>
@@ -27,6 +30,8 @@
     <script>
         var submitEl = document.querySelector("#submit");
         var nameInput = document.querySelector("#name");
+        
+        
 
         var submissionResponseEl = document.querySelector("#response");
 
@@ -34,9 +39,12 @@
             event.preventDefault();
 
             console.log(event);
+            
 
-            var response = "Thank you for your submission " + nameInput.value + "!";
+            var response = "Thank you for your submission " + nameInput.value + "!  Your score is " 
             submissionResponseEl.textContent = response;
+
+            submitEl.disabled = true;
         });
     </script>
 </body>
