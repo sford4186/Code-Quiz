@@ -48,7 +48,7 @@
         var nameInputEl = document.querySelector("#name")
 
         
-        var scorestorage=localStorage.getItem("score");
+        var scorestorage=localStorage.getItem("scoreEl");
 
         var submissionResponseEl = document.querySelector("#response");
 
@@ -57,8 +57,8 @@
 
             console.log(event);
             
-
-            var response = "Thank you for your submission " + nameInputEl.value + "!  Your score is " 
+console.log(scorestorage)
+            var response = "Thank you for your submission " + nameInputEl.value + "!  Your score is " + scorestorage
             submissionResponseEl.textContent = response;
 
             submitEl.disabled = true;

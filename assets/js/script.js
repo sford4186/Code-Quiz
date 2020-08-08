@@ -152,7 +152,7 @@ function showAnswer(event) {
     }
 
     scoreEl.textContent = "Score:  " + score
-    localStorage.setItem("scoreEl", score.value);
+    localStorage.setItem("scoreEl", score);
     //user click
     console.log(event.target.innerText)
     console.log(scoreEl)
