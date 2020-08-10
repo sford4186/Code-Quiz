@@ -52,6 +52,7 @@ function endGame() {
     // window.open("highscoreStore.html");
     endScreen.classList.remove("d-none")
     gameBoard.classList.add("d-none")
+    clearInterval(timer)
 }
 
 //Timer function
@@ -136,11 +137,13 @@ function showAnswer(event) {
 
         answerEl.textContent = "Incorrect!"
         //score = score - 10
-        secondsLeft = secondsLeft - 15
+        secondsLeft = secondsLeft - 10
+        
 
 
     } else {
         answerEl.textContent = "Correct!"
+        
     }
     if (secondsLeft < 0) {
         clearInterval(timer)
@@ -190,14 +193,15 @@ submitEl.addEventListener("click", function (event) {
     console.log(nameInputEl.value + secondsLeft);
     //var highscore = nameInputEl.value + " score: "+ scorestorage
     highscoreEl.textContent = "Your score is: " + secondsLeft
+
     //check for existing highscores if they dont exist create empty array 
     if (response2.length === 0) {
-        alert("you must provide intials")
+        alert("you must provide initials")
         return
     }
     highscorelist = JSON.parse(localStorage.getItem("highscores")) || []
 
-    var newScore = { intials: response2, score: secondsLeft }
+    var newScore = { initials: response2, score: secondsLeft}
 
     highscorelist.push(newScore)
 
