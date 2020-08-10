@@ -91,6 +91,7 @@ h1 {
     justify-content: center;
     
     
+    
     }
     p {
         
@@ -112,6 +113,12 @@ h1 {
     color: white;
     border: 1px solid;
     margin: 10px 40px 10px;
+    }
+
+    #start:hover {
+        background-color: blue;
+    cursor: pointer;
+
     }
 
     #score {
