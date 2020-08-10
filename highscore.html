@@ -35,17 +35,23 @@
     <script>
 
 
-        var nameEl = localStorage.getItem("highscorelist");
+        var nameEl = localStorage.getItem("highscore");
         var array=[]
         var highscore =document.querySelector("#highscore")
 
         console.log(nameEl)
         var li = document.createElement("li")
         highscore.textContent = nameEl
-        //nameEl.appendchild(highscore)
+        highscore.appendChild(nameEl);
+        document.getElementById("highscore").appendChild(nameEl);
+
+        
         array.push(nameEl)
         console.log(array)
         localStorage.setItem("nameEl", array);
+        array.appendchild(nameEl)
+
+            
 
         var button = document.querySelector("#goBack")
         var clearbtn = document.querySelector("#clear")
