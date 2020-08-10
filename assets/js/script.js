@@ -2,6 +2,7 @@
 var button = document.querySelector("#start")
 var startScreen = document.querySelector("#startScreen")
 var gameBoard = document.querySelector("#gameBoard")
+var highscoreboard=document.querySelector("#highscoreboard")
 var timerEl = document.querySelector("#timer")
 var spanEl = document.querySelector("#question")
 //var nextButton = document.querySelector("#next")
@@ -14,6 +15,7 @@ var button4 = document.querySelector("#button3")
 var answerEl = document.querySelector("#answer")
 var scoreEl = document.querySelector("#score")
 var highscoreLi=document.querySelector("#highscorelink")
+var form=document.querySelector("#form-grid")
 
 var score = 0
 var count = 0
@@ -47,6 +49,8 @@ var questions = [
 //end Game when timer ends
 function endGame() {
     console.log('ended')
+    scoreEl.textContent = "Score:  " + secondsLeft
+    localStorage.setItem("scoreEl", secondsLeft);
     window.open("highscoreStore.html");
 }
 
@@ -69,6 +73,7 @@ function startGame() {
     //clear existing html
     startScreen.setAttribute('style', "display:none;")
     gameBoard.setAttribute('style', 'display:block')
+    // highscoreboard.setAttribute('style', 'display:none')
 
 
     //start timer
@@ -158,8 +163,7 @@ function showAnswer(event) {
 
     }
 
-    scoreEl.textContent = "Score:  " + secondsLeft
-    localStorage.setItem("scoreEl", secondsLeft);
+    
     
     //user click
     console.log(event.target.innerText)

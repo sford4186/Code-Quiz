@@ -19,25 +19,26 @@
             <div class="col-sm-6"></div>
             <div class="col-sm-3" id="timer" style="color: white;"></div>
             <div class="col-sm-12" id="score" style="color:white;"></div>
-            
+
         </div>
         <br>
         <br>
-        
+
         <div class="row m-6" id="startScreen" style="justify-content: center">
-            
-           <h1 style="color: white">Code Quiz Challenge</h1>
-           <br>
-           <br>
-           <div class="col-sm-3"></div>
-           <br>
-           <br>
+
+            <h1 style="color: white">Code Quiz Challenge</h1>
+            <br>
+            <br>
+            <div class="col-sm-3"></div>
+            <br>
+            <br>
             <div class="col-sm-6">
                 <p>Try to answer the following code-related questions within the time limit. Keep in mind
-                that incorrect answers will penalize your scoretime by ten seconds! Click the Start button to begin!</p>
+                    that incorrect answers will penalize your scoretime by ten seconds! Click the Start button to begin!
+                </p>
                 <br>
                 <br>
-                
+
             </div>
             <button id="start" style="background-color: red">Start Game</button>
         </div>
@@ -53,16 +54,41 @@
                 <button id="button2">Button 3<span id="choice2"></span></button>
                 <button id="button3">Button 4<span id="choice3"></span></button>
             </div>
+
+            <form id="form" id="form-grid">
+
+                <h2>Enter Your Initials:</h2> <input type="text" placeholder="Enter your initials" id="name" />
+    
+                <button id="submit">Submit</button>
+    
+            </form>
+            <div>
+                <h4 id="response"></h4>
+            </div>
+    
+            <div class="row" id="highscore">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6"><span id="board"></span></div>
+                <br>
+                <br>
+    
+            </div>
+
             <br>
             <br>
-          <!-- <div><button id="next">
-                    <h4>Next</h4>
-                </button></div>-->
             <br>
             <hr>
 
             <h4> <span id="answer" style="display: block"></span></h4>
         </div>
+        
+    </div>
+    
+
+    </div>
+    
+
+
     </div>
 
     <script src="./assets/js/script.js"></script>

@@ -28,7 +28,7 @@
             <button id="goBack" onclick="openWin()">
                 <h4>Go Back</h4>
             </button></div>
-            
+
 
     </div>
     </div>
@@ -36,12 +36,16 @@
 
 
         var nameEl = localStorage.getItem("highscorelist");
-        //var array=nameEl[]
-        var highscore = document.querySelector("#highscore")
+        var array=[]
+        var highscore =document.querySelector("#highscore")
+
         console.log(nameEl)
         var li = document.createElement("li")
         highscore.textContent = nameEl
         //nameEl.appendchild(highscore)
+        array.push(nameEl)
+        console.log(array)
+        localStorage.setItem("nameEl", array);
 
         var button = document.querySelector("#goBack")
         var clearbtn = document.querySelector("#clear")
@@ -50,11 +54,17 @@
         //     document.open("index.html")
         // });
 
+        function refresh(){
+            localStorage.
+        }
         function openWin() {
             window.open("index.html")
+            var list= localStorage.getItem("nameEl");
+            list.textContent=array
+            nameEl.appendchild(array)
         }
 
-        function myFunction() {
+        function myFunction(nameEl) {
             document.getElementById("highscore").reset();
         }
 
