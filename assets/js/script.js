@@ -4,9 +4,9 @@ var startScreen = document.querySelector("#startScreen")
 var gameBoard = document.querySelector("#gameBoard")
 var timerEl = document.querySelector("#timer")
 var spanEl = document.querySelector("#question")
-var nextButton = document.querySelector("#next")
+//var nextButton = document.querySelector("#next")
 var timer
-var secondsLeft = 15
+var secondsLeft = 10
 var button1 = document.querySelector("#button0")
 var button2 = document.querySelector("#button1")
 var button3 = document.querySelector("#button2")
@@ -74,7 +74,11 @@ function startGame() {
     //start timer
     timer()
 
-    
+    writeQuestion()
+}
+function writeQuestion(){
+
+ 
     
     
     //ask first question 
@@ -138,22 +142,24 @@ function showAnswer(event) {
 
 
         answerEl.textContent = "Incorrect!"
-        score = score - 10
+        //score = score - 10
+        secondsLeft= secondsLeft-15
 
 
 
 
     } else {
         answerEl.textContent = "Correct!"
-        score = score + 10
+       // score = score + 10
+       secondsLeft = secondsLeft+15
         
         
 
 
     }
 
-    scoreEl.textContent = "Score:  " + score
-    localStorage.setItem("scoreEl", score);
+    scoreEl.textContent = "Score:  " + secondsLeft
+    localStorage.setItem("scoreEl", secondsLeft);
     
     //user click
     console.log(event.target.innerText)
@@ -161,10 +167,16 @@ function showAnswer(event) {
 
     //my answer
     console.log(questions[count].answer)
+count++
+if(count === questions.length){
+    endGame() }
+    else {
+        writeQuestion()
+    }
 
 }
 
-nextButton.addEventListener("click", question)
+//nextButton.addEventListener("click", question)
 
 button.addEventListener("click", startGame)
 

@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    
+
     <div class="container-fluid">
 
         <h1>HighScore Status</h1>
@@ -18,47 +18,45 @@
         <hr>
 
         <div id="highscore" style="color:white"></div>
+        <br>
+        <br>
+        <hr>
 
-
-
-<br>
-<br>
-<hr>
-
-        <div><button id="clear">
+        <div><button id="clear" onclick="myFunction()" value="Reset form">
                 <h4>Clear Score</h4>
             </button>
-        <button id="goBack" onclick="openWin()">
+            <button id="goBack" onclick="openWin()">
                 <h4>Go Back</h4>
             </button></div>
+            
 
     </div>
     </div>
     <script>
 
 
-var nameEl=localStorage.getItem("highscorelist");
-//var array=nameEl[]
-var highscore=document.querySelector("#highscore")
-console.log(nameEl)
-var li=document.createElement("li")
-highscore.textContent=nameEl
-//nameEl.appendchild(highscore)
+        var nameEl = localStorage.getItem("highscorelist");
+        //var array=nameEl[]
+        var highscore = document.querySelector("#highscore")
+        console.log(nameEl)
+        var li = document.createElement("li")
+        highscore.textContent = nameEl
+        //nameEl.appendchild(highscore)
 
-var button = document.querySelector("#goBack")
-var clearbtn=document.querySelector("#clear")
+        var button = document.querySelector("#goBack")
+        var clearbtn = document.querySelector("#clear")
 
-// button.addEventListener("click", function() {
-//     document.open("index.html")
-// });
+        // button.addEventListener("click", function() {
+        //     document.open("index.html")
+        // });
 
-function openWin(){
-    window.open("index.html")
-}
+        function openWin() {
+            window.open("index.html")
+        }
 
-clearbtn.addEventListener("click",function(){
-    document.getElementById("highscore").reset();
-});
+        function myFunction() {
+            document.getElementById("highscore").reset();
+        }
 
 
 
