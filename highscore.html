@@ -5,68 +5,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./assets/css/highscore.css">
+
     <title>HighScore</title>
 </head>
 
 <body>
+    
     <div class="container-fluid">
 
-        <h1>All Done!</h1>
-        <div class="col-sm-3" id="timer"></div>
-        <form>
-            
+        <h1>HighScore</h1>
+        <br>
+        <hr>
 
-            <h2>Enter Your Initials:</h2> <input type="text" placeholder="Enter your initials" id="name" />
+        <div id="highscore" style="color:white"></div>
 
-            <button id="submit">Submit</button>
 
-        </form>
-        <div>
-            <h4 id="response"></h4>
-        </div>
 
-        <div class="row" style="display: none;" id="highscore">
-            <div class="col-sm-3"></div>
-            <div class="col-sm-6"><span id="board"></span></div>
-            <br>
-            <br>
-            <div id="output" class="output">
-                <input placeholder="" id="scoreStorage"></input>
-                
-            </div>
-            <br>
-            <br>
-            <div><button id="go back">
-                    <h4>Go back</h4>
-                </button></div>
-                <div><button id="Clear Score"><h4>Clear Score</h4></button></div>
+<br>
+<br>
+<hr>
+
+        <div><button id="clear">
+                <h4>Clear Score</h4>
+            </button>
+        <button id="goBack" onclick="openWin()">
+                <h4>Go Back</h4>
+            </button></div>
 
     </div>
     </div>
     <script>
-        var submitEl = document.querySelector("#submit");
-        var nameInputEl = document.querySelector("#name")
 
-        
-        var scorestorage=localStorage.getItem("scoreEl");
 
-        var submissionResponseEl = document.querySelector("#response");
+var nameEl=localStorage.getItem("highscorelist");
+//var array=nameEl[]
+var highscore=document.querySelector("#highscore")
+console.log(nameEl)
+var li=document.createElement("li")
+highscore.textContent=nameEl
+//nameEl.appendchild(highscore)
 
-        submitEl.addEventListener("click", function (event) {
-            event.preventDefault();
+var button = document.querySelector("#goBack")
+var clearbtn=document.querySelector("#clear")
 
-            console.log(event);
-            
-console.log(scorestorage)
-            var response = "Thank you for your submission " + nameInputEl.value + "!  Your score is " + scorestorage
-            submissionResponseEl.textContent = response;
+// button.addEventListener("click", function() {
+//     document.open("index.html")
+// });
 
-            submitEl.disabled = true;
-            console.log(nameInputEl.value);
-            
-    
-    
-        });
+function openWin(){
+    window.open("index.html")
+}
+
+clearbtn.addEventListener("click",function(){
+    document.getElementById("highscore").reset();
+});
+
+
 
     </script>
 </body>

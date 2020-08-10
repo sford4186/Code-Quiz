@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./assets/css/highscore.css">
+    
+    <title>HighScore</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+
+        <h1>All Done!</h1>
+        <div class="col-sm-3" id="done"></div>
+
+        <form>
+
+            <h2>Enter Your Initials:</h2> <input type="text" placeholder="Enter your initials" id="name" />
+
+            <button id="submit">Submit</button>
+
+        </form>
+        <div>
+            <h4 id="response"></h4>
+        </div>
+
+        <div class="row" id="highscore">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6"><span id="board"></span></div>
+            <br>
+            <br>
+
+        </div>
+    </div>
+   
+
+    <script>
+        var submitEl = document.querySelector("#submit");
+        var nameInputEl = document.querySelector("#name")
+        var highscoreEl = document.querySelector("#highscore")
+        var highscorelist = [];
+        
+
+        var scorestorage = localStorage.getItem("scoreEl");
+
+
+        var submissionResponseEl = document.querySelector("#response");
+
+
+        submitEl.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            console.log(event);
+
+            console.log(scorestorage)
+            var response2 = nameInputEl.value
+            var response = "Thank you for your submission " + nameInputEl.value + "!"
+            submissionResponseEl.textContent = response;
+
+            submitEl.disabled = true;
+            console.log(nameInputEl.value + scorestorage);
+
+
+            //var highscore = nameInputEl.value + " score: "+ scorestorage
+            highscoreEl.textContent = "Your score is: " + scorestorage
+            localStorage.setItem("nameInputEl", response2);
+            var list = highscorelist
+            highscorelist.push(response2 + "-" + scorestorage + " points")
+            console.log(highscorelist)
+            localStorage.setItem("highscorelist", list)
+            window.open("highscore.html")
+
+        });
+
+        
+        
+
+    </script>
+</body>
+
+</html>

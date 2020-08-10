@@ -13,7 +13,7 @@ var button3 = document.querySelector("#button2")
 var button4 = document.querySelector("#button3")
 var answerEl = document.querySelector("#answer")
 var scoreEl = document.querySelector("#score")
-
+var highscoreLi=document.querySelector("#highscorelink")
 
 var score = 0
 var count = 0
@@ -47,7 +47,7 @@ var questions = [
 //end Game when timer ends
 function endGame() {
     console.log('ended')
-    window.open("highscore.html");
+    window.open("highscoreStore.html");
 }
 
 //Timer function
@@ -128,6 +128,7 @@ function question() {
 
 function showAnswer(event) {
     event.preventDefault()
+    
 
 
     console.log(scoreEl)
@@ -153,6 +154,7 @@ function showAnswer(event) {
 
     scoreEl.textContent = "Score:  " + score
     localStorage.setItem("scoreEl", score);
+    
     //user click
     console.log(event.target.innerText)
     console.log(scoreEl)
@@ -165,5 +167,6 @@ function showAnswer(event) {
 nextButton.addEventListener("click", question)
 
 button.addEventListener("click", startGame)
+
 
 
