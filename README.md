@@ -9,4 +9,9 @@ What I plan to accomplish:
 4. When the game is over, initials and score will be saved in local storage.
 
 
+## Screenshot of website  
+![Screenshot of deployed site](./Assets/screenshot.PNG)
 
+## Deployed site
+
+[Code-Quiz](https://sford4186.github.io/Code-Quiz/)
